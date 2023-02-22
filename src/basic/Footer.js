@@ -1,6 +1,7 @@
+import { ViewPropTypes as DeprecatedViewPropTypes } from 'deprecated-react-native-prop-types';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, ViewPropTypes, SafeAreaView } from 'react-native';
+import { View, SafeAreaView } from 'react-native';
 import { connectStyle } from 'native-base-shoutem-theme';
 
 import mapPropsToStyleNames from '../utils/mapPropsToStyleNames';
@@ -27,7 +28,7 @@ class Footer extends Component {
 }
 
 Footer.propTypes = {
-  ...ViewPropTypes,
+  ...DeprecatedViewPropTypes,
   style: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.number,

@@ -1,6 +1,7 @@
+import { ViewPropTypes as DeprecatedViewPropTypes } from 'deprecated-react-native-prop-types';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, ViewPropTypes } from 'react-native';
+import { View } from 'react-native';
 import { connectStyle } from 'native-base-shoutem-theme';
 
 import mapPropsToStyleNames from '../utils/mapPropsToStyleNames';
@@ -16,7 +17,7 @@ class Badge extends Component {
 }
 
 Badge.propTypes = {
-  ...ViewPropTypes,
+  ...DeprecatedViewPropTypes,
   style: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.number,
@@ -24,8 +25,10 @@ Badge.propTypes = {
   ])
 };
 
-const StyledBadge = connectStyle('NativeBase.Badge', {}, mapPropsToStyleNames)(
-  Badge
-);
+const StyledBadge = connectStyle(
+  'NativeBase.Badge',
+  {},
+  mapPropsToStyleNames
+)(Badge);
 
 export { StyledBadge as Badge };

@@ -1,9 +1,10 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable no-unneeded-ternary */
+import { ViewPropTypes as DeprecatedViewPropTypes } from 'deprecated-react-native-prop-types';
 import { connectStyle } from 'native-base-shoutem-theme';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { View, StatusBar, ViewPropTypes, SafeAreaView } from 'react-native';
+import { View, StatusBar, SafeAreaView } from 'react-native';
 
 import mapPropsToStyleNames from '../utils/mapPropsToStyleNames';
 import getStyle from '../utils/getStyle';
@@ -59,7 +60,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  ...ViewPropTypes,
+  ...DeprecatedViewPropTypes,
   style: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.number,

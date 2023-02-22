@@ -1,6 +1,7 @@
+import { ViewPropTypes as DeprecatedViewPropTypes } from 'deprecated-react-native-prop-types';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, ViewPropTypes } from 'react-native';
+import { View } from 'react-native';
 import { connectStyle } from 'native-base-shoutem-theme';
 
 import mapPropsToStyleNames from '../utils/mapPropsToStyleNames';
@@ -12,7 +13,7 @@ class Toast extends Component {
 }
 
 Toast.propTypes = {
-  ...ViewPropTypes,
+  ...DeprecatedViewPropTypes,
   style: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.number,
@@ -20,7 +21,9 @@ Toast.propTypes = {
   ])
 };
 
-const StyledToast = connectStyle('NativeBase.Toast', {}, mapPropsToStyleNames)(
-  Toast
-);
+const StyledToast = connectStyle(
+  'NativeBase.Toast',
+  {},
+  mapPropsToStyleNames
+)(Toast);
 export { StyledToast as Toast };

@@ -1,6 +1,7 @@
+import { ViewPropTypes as DeprecatedViewPropTypes } from 'deprecated-react-native-prop-types';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { FlatList, View, ViewPropTypes } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { connectStyle } from 'native-base-shoutem-theme';
 
 import mapPropsToStyleNames from '../utils/mapPropsToStyleNames';
@@ -26,7 +27,7 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-  ...ViewPropTypes,
+  ...DeprecatedViewPropTypes,
   style: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.number,
@@ -37,8 +38,10 @@ Card.propTypes = {
   renderRow: PropTypes.func
 };
 
-const StyledCard = connectStyle('NativeBase.Card', {}, mapPropsToStyleNames)(
-  Card
-);
+const StyledCard = connectStyle(
+  'NativeBase.Card',
+  {},
+  mapPropsToStyleNames
+)(Card);
 
 export { StyledCard as Card };

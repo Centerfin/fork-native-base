@@ -1,5 +1,6 @@
+import { ViewPropTypes as DeprecatedViewPropTypes } from 'deprecated-react-native-prop-types';
 import React, { Component } from 'react';
-import { View, ViewPropTypes } from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { connectStyle } from 'native-base-shoutem-theme';
 
@@ -29,7 +30,7 @@ class Root extends Component {
 }
 
 Root.propTypes = {
-  ...ViewPropTypes,
+  ...DeprecatedViewPropTypes,
   style: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.number,
@@ -37,8 +38,10 @@ Root.propTypes = {
   ])
 };
 
-const StyledRoot = connectStyle('NativeBase.Root', {}, mapPropsToStyleNames)(
-  Root
-);
+const StyledRoot = connectStyle(
+  'NativeBase.Root',
+  {},
+  mapPropsToStyleNames
+)(Root);
 
 export { StyledRoot as Root };
